@@ -1,4 +1,4 @@
-                            <from flask import Flask, render_template_string
+from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
@@ -269,7 +269,7 @@ HTML_LAYOUT = f"""
     <!-- الواجهة الرئيسية -->
     <section class="hero">
         <div class="container">
-            <span class="badge-gold d-block mb-2">Hevo-Kosmatik BEAUTY-AKADEMIE KÖLN</span>
+            <span class="badge-gold d-block mb-2">DAKKS-ZERTIFIZIERTE BEAUTY-AKADEMIE KÖLN</span>
             <h1 class="display-4 my-3">Werde eine starke, <br><i class="serif-font" style="color: var(--accent-gold);">unabhängige Frau.</i></h1>
             <p class="mx-auto mb-4" style="max-width: 650px; color: #ffffff; font-size: 1.05rem;">
                 Die erste DAkkS-zertifizierte Kosmetik-Akademie in Köln — Ausbildung und Behandlungen auf Deutsch, Arabisch und Kurdisch, unter ärztlicher Aufsicht.
