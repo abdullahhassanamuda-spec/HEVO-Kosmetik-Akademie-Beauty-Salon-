@@ -17,24 +17,17 @@ HTML_LAYOUT = """
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --card-bg: #141414;
-            --accent-gold: #c5a059;
-            --text-white: #ffffff;
-            --text-gold-light: #e6ca94;
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
         }
         html {
             scroll-behavior: smooth;
         }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            font-family: 'Montserrat', sans-serif;
-        }
         h1, h2, h3, h4, .serif-font {
             font-family: 'Cormorant Garamond', serif;
-            color: var(--text-white);
+            color: #ffffff;
         }
         .navbar {
             background-color: rgba(10, 10, 10, 0.98);
@@ -43,12 +36,12 @@ HTML_LAYOUT = """
         .logo-circle {
             width: 45px;
             height: 45px;
-            border: 1px solid var(--accent-gold);
+            border: 1px solid #c5a059;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-gold);
+            color: #c5a059;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
         }
@@ -67,24 +60,24 @@ HTML_LAYOUT = """
             transition: 0.3s;
         }
         .nav-link-custom:hover {
-            color: var(--accent-gold);
+            color: #c5a059;
             padding-left: 10px;
         }
         .hero {
             padding: 80px 20px 60px;
             text-align: center;
-            background: linear-gradient(180deg, #111 0%, var(--bg-dark) 100%);
+            background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
         }
         .badge-gold {
-            color: var(--accent-gold);
+            color: #c5a059;
             letter-spacing: 2px;
             font-size: 0.85rem;
             text-transform: uppercase;
             font-weight: 600;
         }
         .btn-gold {
-            background-color: var(--accent-gold);
-            color: #000;
+            background-color: #c5a059;
+            color: #000000;
             font-weight: 600;
             border-radius: 30px;
             padding: 14px 32px;
@@ -97,12 +90,12 @@ HTML_LAYOUT = """
         }
         .btn-gold:hover {
             background-color: #d4af66;
-            color: #000;
+            color: #000000;
             transform: translateY(-2px);
         }
         .btn-outline-gold {
-            border: 1px solid var(--accent-gold);
-            color: var(--text-white);
+            border: 1px solid #c5a059;
+            color: #ffffff;
             font-weight: 500;
             border-radius: 30px;
             padding: 14px 32px;
@@ -113,12 +106,12 @@ HTML_LAYOUT = """
             transition: 0.3s;
         }
         .btn-outline-gold:hover {
-            background-color: var(--accent-gold);
-            color: #000;
+            background-color: #c5a059;
+            color: #000000;
         }
         .price-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-gold);
+            background-color: #141414;
+            border: 1px solid #c5a059;
             border-radius: 20px;
             padding: 30px;
             margin-bottom: 40px;
@@ -130,21 +123,21 @@ HTML_LAYOUT = """
             margin-right: 15px;
         }
         .new-price {
-            color: var(--accent-gold);
+            color: #c5a059;
             font-size: 2.8rem;
             font-weight: 700;
         }
         .info-pill {
             background: rgba(197, 160, 89, 0.15);
             border: 1px solid rgba(197, 160, 89, 0.4);
-            color: var(--text-gold-light);
+            color: #e6ca94;
             padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.9rem;
             display: inline-block;
         }
         .service-card {
-            background-color: var(--card-bg);
+            background-color: #141414;
             border: 1px solid #2a2a2a;
             border-radius: 16px;
             overflow: hidden;
@@ -162,7 +155,7 @@ HTML_LAYOUT = """
         .service-list {
             list-style: none;
             padding-left: 0;
-            color: var(--text-white);
+            color: #ffffff;
             font-size: 1rem;
         }
         .service-list li {
@@ -173,16 +166,16 @@ HTML_LAYOUT = """
         }
         .service-list li::before {
             content: "•";
-            color: var(--accent-gold);
+            color: #c5a059;
             position: absolute;
             left: 0;
             font-size: 1.4rem;
             top: -3px;
         }
         .tag-badge {
-            background: #222;
-            color: var(--text-white);
-            border: 1px solid #444;
+            background: #222222;
+            color: #ffffff;
+            border: 1px solid #444444;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -190,8 +183,8 @@ HTML_LAYOUT = """
             margin: 4px;
         }
         .contact-box {
-            background-color: var(--card-bg);
-            border: 1px solid #333;
+            background-color: #141414;
+            border: 1px solid #333333;
             border-radius: 20px;
             padding: 35px;
         }
@@ -205,7 +198,7 @@ HTML_LAYOUT = """
             bottom: 30px;
             right: 30px;
             background-color: #25d366;
-            color: #FFF;
+            color: #ffffff;
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
@@ -226,12 +219,12 @@ HTML_LAYOUT = """
                 <div class="logo-circle">H</div>
                 <div>
                     <div class="fw-bold fs-4" style="letter-spacing: 3px;">HEVO</div>
-                    <div class="small" style="font-size: 0.65rem; letter-spacing: 2px; color: var(--accent-gold);">KOSMETIK AKADEMIE</div>
+                    <div class="small" style="font-size: 0.65rem; letter-spacing: 2px; color: #c5a059;">KOSMETIK AKADEMIE</div>
                 </div>
             </a>
 
             <button class="navbar-toggler border-0 fs-2 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                <i class="fas fa-bars" style="color: var(--text-white);"></i>
+                <i class="fas fa-bars" style="color: #ffffff;"></i>
             </button>
         </div>
     </nav>
@@ -240,7 +233,7 @@ HTML_LAYOUT = """
         <div class="offcanvas-header border-bottom border-secondary py-3">
             <div class="d-flex align-items-center gap-2">
                 <div class="logo-circle" style="width: 35px; height: 35px; font-size: 1.1rem;">H</div>
-                <span class="fw-bold fs-5" style="letter-spacing: 2px; color: #fff;">HEVO</span>
+                <span class="fw-bold fs-5" style="letter-spacing: 2px; color: #ffffff;">HEVO</span>
             </div>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
@@ -253,7 +246,7 @@ HTML_LAYOUT = """
                 <a href="#kontakt" class="nav-link-custom" data-bs-dismiss="offcanvas">Kontakt</a>
             </div>
             <div class="mt-4">
-                <a href="https://wa.me/{{ whatsapp_num }}?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
+                <a href="https://wa.me/491739125695?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
             </div>
         </div>
     </div>
@@ -261,12 +254,12 @@ HTML_LAYOUT = """
     <section class="hero">
         <div class="container">
             <span class="badge-gold d-block mb-2">DAKKS-ZERTIFIZIERTE BEAUTY-AKADEMIE KÖLN</span>
-            <h1 class="display-4 my-3">Werde eine starke, <br><i class="serif-font" style="color: var(--accent-gold);">unabhängige Frau.</i></h1>
+            <h1 class="display-4 my-3">Werde eine starke, <br><i class="serif-font" style="color: #c5a059;">unabhängige Frau.</i></h1>
             <p class="mx-auto mb-4" style="max-width: 650px; color: #ffffff; font-size: 1.05rem;">
                 Die erste DAkkS-zertifizierte Kosmetik-Akademie in Köln — Ausbildung und Behandlungen auf Deutsch, Arabisch und Kurdisch, unter ärztlicher Aufsicht.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://wa.me/{{ whatsapp_num }}?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
+                <a href="https://wa.me/491739125695?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
                 <a href="#akademie" class="btn-outline-gold">ZUR AKADEMIE</a>
             </div>
         </div>
@@ -332,7 +325,7 @@ HTML_LAYOUT = """
                     <p class="mb-0" style="color: #ffffff;"><strong>ABSCHLUSS:</strong> Mehrere anerkannte Zertifikate</p>
                 </div>
                 <div class="col-md-5 text-center">
-                    <a href="https://wa.me/{{ whatsapp_num }}?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
+                    <a href="https://wa.me/491739125695?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
                 </div>
             </div>
         </div>
@@ -340,7 +333,7 @@ HTML_LAYOUT = """
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="service-card p-4">
-                    <h3 class="serif-font fs-2 mb-3" style="color: var(--accent-gold);"><i class="fas fa-book me-2"></i>Theorie</h3>
+                    <h3 class="serif-font fs-2 mb-3" style="color: #c5a059;"><i class="fas fa-book me-2"></i>Theorie</h3>
                     <ul class="service-list">
                         <li>Geräte & Hygiene</li>
                         <li>Kundenberatung & Hautanalyse</li>
@@ -353,7 +346,7 @@ HTML_LAYOUT = """
 
             <div class="col-md-6">
                 <div class="service-card p-4">
-                    <h3 class="serif-font fs-2 mb-3" style="color: var(--accent-gold);"><i class="fas fa-hands me-2"></i>Praxis</h3>
+                    <h3 class="serif-font fs-2 mb-3" style="color: #c5a059;"><i class="fas fa-hands me-2"></i>Praxis</h3>
                     <ul class="service-list">
                         <li>Manuelle Reinigung</li>
                         <li>Diamantpeeling & Dermapen</li>
@@ -379,14 +372,14 @@ HTML_LAYOUT = """
     <section id="behandlungen" class="container my-5 pt-4">
         <div id="galerie" class="text-center mb-5">
             <span class="badge-gold">BEHANDLUNGEN & GALERIE</span>
-            <h2 class="display-4 serif-font mt-2">Sichtbare Ergebnisse, <br><i style="color: var(--accent-gold);">spürbare Pflege</i></h2>
+            <h2 class="display-4 serif-font mt-2">Sichtbare Ergebnisse, <br><i style="color: #c5a059;">spürbare Pflege</i></h2>
         </div>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Gesicht">
                     <div class="service-card-body">
-                        <h3 class="serif-font fs-2" style="color: var(--accent-gold);">Gesicht & Haut</h3>
+                        <h3 class="serif-font fs-2" style="color: #c5a059;">Gesicht & Haut</h3>
                         <ul class="service-list mt-3">
                             <li>Tiefenreinigung & Hydrafacial</li>
                             <li>Dermapen / Microneedling & BB Glow</li>
@@ -400,7 +393,7 @@ HTML_LAYOUT = """
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1512290900673-7002012d22b2?auto=format&fit=crop&w=800&q=80" alt="Laser">
                     <div class="service-card-body">
-                        <h3 class="serif-font fs-2" style="color: var(--accent-gold);">Laser & Anti-Aging</h3>
+                        <h3 class="serif-font fs-2" style="color: #c5a059;">Laser & Anti-Aging</h3>
                         <ul class="service-list mt-3">
                             <li>CO2-Laser (Hauterneuerung)</li>
                             <li>Plasma Pen (Lifting ohne OP)</li>
@@ -416,7 +409,7 @@ HTML_LAYOUT = """
     <section id="kontakt" class="container my-5 pt-4">
         <div class="contact-box">
             <span class="badge-gold d-block mb-2">KONTAKT</span>
-            <h2 class="serif-font fs-1 mb-4" style="color: var(--accent-gold);">Besuche uns in Köln</h2>
+            <h2 class="serif-font fs-1 mb-4" style="color: #c5a059;">Besuche uns in Köln</h2>
             <p class="mb-4" style="font-size: 1.05rem;">
                 Vereinbare eine kostenlose Beratung — für eine Behandlung oder für die Ausbildung. Wir beraten dich gern auf Deutsch, Arabisch oder Kurdisch.
             </p>
@@ -435,7 +428,7 @@ HTML_LAYOUT = """
                         <i class="fas fa-phone-alt fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">TELEFON / WHATSAPP</span>
-                            <a href="tel:{{ phone_num }}" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
+                            <a href="tel:+491739125695" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
                         </div>
                     </div>
                 </div>
@@ -453,6 +446,17 @@ HTML_LAYOUT = """
                         <i class="fab fa-instagram fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">INSTAGRAM</span>
-                            <strong>{{ instagram }}</strong>
+                            <strong>@hevo_kosmatic_akademie_</strong>
                         </div>
-        
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 text-center text-md-start">
+                <a href="https://wa.me/491739125695?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold me-2 mb-2">WHATSAPP BERATUNG</a>
+                <a href="tel:+491739125695" class="btn-outline-gold mb-2">ANRUFEN</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5" style="border-top: 1px so
