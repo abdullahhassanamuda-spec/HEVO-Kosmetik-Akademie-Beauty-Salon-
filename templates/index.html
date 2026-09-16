@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HEVO KOSMETIK AKADEMIE | KÖLN</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #0a0a0a; color: #ffffff; font-family: sans-serif; }
+        body { background-color: #0a0a0a; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; }
         html { scroll-behavior: smooth; }
-        h1, h2, h3, h4 { color: #ffffff; }
         .navbar { background-color: #0a0a0a; border-bottom: 1px solid #222; }
-        .logo-circle { width: 45px; height: 45px; border: 1px solid #c5a059; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #c5a059; font-size: 1.4rem; }
+        .logo-circle { width: 45px; height: 45px; border: 1px solid #c5a059; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #c5a059; font-size: 1.4rem; font-weight: bold; }
         .offcanvas { background-color: #0d0d0d !important; color: #ffffff; border-left: 1px solid #222; }
         .nav-link-custom { color: #ffffff; font-size: 1.25rem; padding: 12px 0; text-decoration: none; display: block; border-bottom: 1px solid #1a1a1a; }
         .nav-link-custom:hover { color: #c5a059; }
         .hero { padding: 80px 20px 60px; text-align: center; background: #0a0a0a; }
         .badge-gold { color: #c5a059; letter-spacing: 2px; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; }
         .btn-gold { background-color: #c5a059; color: #000000; font-weight: 600; border-radius: 30px; padding: 14px 32px; border: none; text-decoration: none; display: inline-block; }
+        .btn-gold:hover { background-color: #d4af66; color: #000000; }
         .btn-outline-gold { border: 1px solid #c5a059; color: #ffffff; font-weight: 500; border-radius: 30px; padding: 14px 32px; text-decoration: none; display: inline-block; }
+        .btn-outline-gold:hover { background-color: #c5a059; color: #000000; }
         .price-box { background-color: #141414; border: 1px solid #c5a059; border-radius: 20px; padding: 30px; margin-bottom: 40px; }
         .old-price { text-decoration: line-through; color: #888888; font-size: 1.5rem; margin-right: 15px; }
         .new-price { color: #c5a059; font-size: 2.8rem; font-weight: 700; }
-        .info-pill { background: rgba(197, 160, 89, 0.15); border: 1px solid rgba(197, 160, 89, 0.4); color: #e6ca94; padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; display: inline-block; }
+        .info-pill { background: rgba(197, 160, 89, 0.15); border: 1px solid rgba(197, 160, 89, 0.4); color: #e6ca94; padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin: 4px; }
         .service-card { background-color: #141414; border: 1px solid #2a2a2a; border-radius: 16px; overflow: hidden; margin-bottom: 30px; height: 100%; }
         .service-card img { width: 100%; height: 240px; object-fit: cover; }
         .service-card-body { padding: 25px; }
@@ -31,17 +34,18 @@
         .service-list li::before { content: "•"; color: #c5a059; position: absolute; left: 0; font-size: 1.4rem; top: -3px; }
         .tag-badge { background: #222222; color: #ffffff; border: 1px solid #444444; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin: 4px; }
         .contact-box { background-color: #141414; border: 1px solid #333333; border-radius: 20px; padding: 35px; }
-        .contact-box p, .contact-box span, .contact-box a { color: #ffffff !important; }
         .float-whatsapp { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #ffffff; border-radius: 50px; text-align: center; font-size: 30px; z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
     </style>
 </head>
 <body>
+
+    <!-- القائمة العلوية Navigation -->
     <nav class="navbar navbar-dark sticky-top py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand d-flex align-items-center gap-3" href="#">
                 <div class="logo-circle">H</div>
                 <div>
-                    <div class="fw-bold fs-4" style="letter-spacing: 3px;">HEVO</div>
+                    <div class="fw-bold fs-4" style="letter-spacing: 3px; color: #ffffff;">HEVO</div>
                     <div class="small" style="font-size: 0.65rem; letter-spacing: 2px; color: #c5a059;">KOSMETIK AKADEMIE</div>
                 </div>
             </a>
@@ -51,6 +55,7 @@
         </div>
     </nav>
 
+    <!-- القائمة الجانبية Offcanvas -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header border-bottom border-secondary py-3">
             <div class="d-flex align-items-center gap-2">
@@ -73,11 +78,12 @@
         </div>
     </div>
 
+    <!-- القسم الرئيسي Hero -->
     <section class="hero">
         <div class="container">
             <span class="badge-gold d-block mb-2">DAKKS-ZERTIFIZIERTE BEAUTY-AKADEMIE KÖLN</span>
-            <h1 class="display-4 my-3">Werde eine starke, <br><i style="color: #c5a059;">unabhängige Frau.</i></h1>
-            <p class="mx-auto mb-4" style="max-width: 650px; color: #ffffff; font-size: 1.05rem;">
+            <h1 class="display-4 my-3" style="color: #ffffff;">Werde eine starke, <br><i style="color: #c5a059;">unabhängige Frau.</i></h1>
+            <p class="mx-auto mb-4" style="max-width: 650px; color: #dddddd; font-size: 1.05rem;">
                 Die erste DAkkS-zertifizierte Kosmetik-Akademie in Köln — Ausbildung und Behandlungen auf Deutsch, Arabisch und Kurdisch, unter ärztlicher Aufsicht.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
@@ -87,23 +93,25 @@
         </div>
     </section>
 
+    <!-- قسم عن الأكاديمية Über uns -->
     <section id="ueber-uns" class="container my-5 py-3">
         <div class="text-center mb-4">
             <span class="badge-gold">ÜBER UNS</span>
-            <h2 class="display-4 mt-2">Warum HEVO Kosmetik?</h2>
+            <h2 class="display-4 mt-2" style="color: #ffffff;">Warum HEVO Kosmetik?</h2>
         </div>
         <div class="row g-4 text-center text-md-start">
-            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-certificate text-warning fs-2 mb-2"></i><h5>DAkkS Zertifiziert</h5><p class="small text-muted mb-0">Höchste Ausbildungsstandards in Deutschland.</p></div></div>
-            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-user-md text-warning fs-2 mb-2"></i><h5>Ärztliche Aufsicht</h5><p class="small text-muted mb-0">Fachärztliche Begleitung bei allen Behandlungen.</p></div></div>
-            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-language text-warning fs-2 mb-2"></i><h5>3 Sprachen</h5><p class="small text-muted mb-0">Unterricht auf Deutsch, Arabisch & Kurdisch.</p></div></div>
-            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-award text-warning fs-2 mb-2"></i><h5>FachDozentin</h5><p class="small text-muted mb-0">Offiziell anerkannte Expertise und Zertifikate.</p></div></div>
+            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-certificate text-warning fs-2 mb-2"></i><h5 style="color: #ffffff;">DAkkS Zertifiziert</h5><p class="small text-muted mb-0">Höchste Ausbildungsstandards in Deutschland.</p></div></div>
+            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-user-md text-warning fs-2 mb-2"></i><h5 style="color: #ffffff;">Ärztliche Aufsicht</h5><p class="small text-muted mb-0">Fachärztliche Begleitung bei allen Behandlungen.</p></div></div>
+            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-language text-warning fs-2 mb-2"></i><h5 style="color: #ffffff;">3 Sprachen</h5><p class="small text-muted mb-0">Unterricht auf Deutsch, Arabisch & Kurdisch.</p></div></div>
+            <div class="col-md-3 col-6"><div class="p-3 border border-secondary rounded-3 h-100"><i class="fas fa-award text-warning fs-2 mb-2"></i><h5 style="color: #ffffff;">FachDozentin</h5><p class="small text-muted mb-0">Offiziell anerkannte Expertise und Zertifikate.</p></div></div>
         </div>
     </section>
 
+    <!-- قسم الأكاديمية والدورات Akademie -->
     <section id="akademie" class="container my-5 pt-4">
         <div class="text-center mb-4">
             <span class="badge-gold">DIE AKADEMIE</span>
-            <h2 class="display-4 mt-2">Fachkosmetik-Ausbildung</h2>
+            <h2 class="display-4 mt-2" style="color: #ffffff;">Fachkosmetik-Ausbildung</h2>
         </div>
         <div class="price-box">
             <div class="row align-items-center text-center text-md-start">
@@ -165,10 +173,11 @@
         </div>
     </section>
 
+    <!-- قسم العلاجات Behandlungen -->
     <section id="behandlungen" class="container my-5 pt-4">
         <div id="galerie" class="text-center mb-5">
             <span class="badge-gold">BEHANDLUNGEN & GALERIE</span>
-            <h2 class="display-4 mt-2">Sichtbare Ergebnisse, <br><i style="color: #c5a059;">spürbare Pflege</i></h2>
+            <h2 class="display-4 mt-2" style="color: #ffffff;">Sichtbare Ergebnisse, <br><i style="color: #c5a059;">spürbare Pflege</i></h2>
         </div>
         <div class="row g-4">
             <div class="col-md-6">
@@ -202,11 +211,12 @@
         </div>
     </section>
 
+    <!-- قسم التواصل Kontakt -->
     <section id="kontakt" class="container my-5 pt-4">
         <div class="contact-box">
             <span class="badge-gold d-block mb-2">KONTAKT</span>
             <h2 class="fs-1 mb-4" style="color: #c5a059;">Besuche uns in Köln</h2>
-            <p class="mb-4" style="font-size: 1.05rem;">
+            <p class="mb-4" style="font-size: 1.05rem; color: #ffffff;">
                 Vereinbare eine kostenlose Beratung — für eine Behandlung oder für die Ausbildung. Wir beraten dich gern auf Deutsch, Arabisch oder Kurdisch.
             </p>
             <div class="row g-4">
@@ -215,14 +225,14 @@
                         <i class="fas fa-map-marker-alt fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">ADRESSE</span>
-                            <strong>Berliner Straße 368, 51061 Köln</strong>
+                            <strong style="color: #ffffff;">Berliner Straße 368, 51061 Köln</strong>
                         </div>
                     </div>
                     <div class="d-flex align-items-start gap-3 mb-3">
                         <i class="fas fa-phone-alt fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">TELEFON / WHATSAPP</span>
-                            <a href="tel:+491739125695" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
+                            <a href="tel:+491739125695" class="text-decoration-none fw-bold" style="font-size: 1.1rem; color: #ffffff;">0173 9125695</a>
                         </div>
                     </div>
                 </div>
@@ -231,14 +241,14 @@
                         <i class="fas fa-clock fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">ÖFFNUNGSZEITEN</span>
-                            <strong>Mo – Sa · 10:00 – 15:00 Uhr</strong>
+                            <strong style="color: #ffffff;">Mo – Sa · 10:00 – 15:00 Uhr</strong>
                         </div>
                     </div>
                     <div class="d-flex align-items-start gap-3 mb-3">
                         <i class="fab fa-instagram fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">INSTAGRAM</span>
-                            <strong>@hevo_kosmatic_akademie_</strong>
+                            <strong style="color: #ffffff;">@hevo_kosmatic_akademie_</strong>
                         </div>
                     </div>
                 </div>
@@ -250,19 +260,22 @@
         </div>
     </section>
 
+    <!-- الفوتر Footer -->
     <footer class="text-center py-5" style="border-top: 1px solid #222;">
         <div class="container">
-            <h3 class="fs-2 mb-2">HEVO KOSMETIK AKADEMIE</h3>
-            <p class="mb-4" style="color: #ffffff;">Berliner Straße 368 · 51061 Köln · Mo – Sa · 10:00 – 15:00 Uhr</p>
+            <h3 class="fs-2 mb-2" style="color: #ffffff;">HEVO KOSMETIK AKADEMIE</h3>
+            <p class="mb-4" style="color: #cccccc;">Berliner Straße 368 · 51061 Köln · Mo – Sa · 10:00 – 15:00 Uhr</p>
             <p class="small mb-0" style="color: #888888;">&copy; HEVO Kosmetik Akademie Köln. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
+    <!-- زر واتساب العائم -->
     <a href="https://wa.me/491739125695?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="float-whatsapp" target="_blank" title="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- JavaScript Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-              </html>
-
+    </html>
+    
