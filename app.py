@@ -2,9 +2,6 @@ from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-# ==========================================
-# بيانات الاتصال المحدثة
-# ==========================================
 PHONE_NUMBER = "+491739125695"
 WHATSAPP_NUMBER = "491739125695"
 INSTAGRAM_HANDLE = "@hevo_kosmatic_akademie_"
@@ -223,7 +220,6 @@ HTML_LAYOUT = """
 </head>
 <body>
 
-    <!-- القائمة العلوية مع زر القائمة على اليمين -->
     <nav class="navbar navbar-dark sticky-top py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand d-flex align-items-center gap-3" href="#">
@@ -240,7 +236,6 @@ HTML_LAYOUT = """
         </div>
     </nav>
 
-    <!-- قائمة الهواتف المنسدلة -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header border-bottom border-secondary py-3">
             <div class="d-flex align-items-center gap-2">
@@ -258,12 +253,11 @@ HTML_LAYOUT = """
                 <a href="#kontakt" class="nav-link-custom" data-bs-dismiss="offcanvas">Kontakt</a>
             </div>
             <div class="mt-4">
-                <a href="https://wa.me/""" + WHATSAPP_NUMBER + """?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
+                <a href="https://wa.me/{{ whatsapp_num }}?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
             </div>
         </div>
     </div>
 
-    <!-- الواجهة الرئيسية -->
     <section class="hero">
         <div class="container">
             <span class="badge-gold d-block mb-2">DAKKS-ZERTIFIZIERTE BEAUTY-AKADEMIE KÖLN</span>
@@ -272,13 +266,12 @@ HTML_LAYOUT = """
                 Die erste DAkkS-zertifizierte Kosmetik-Akademie in Köln — Ausbildung und Behandlungen auf Deutsch, Arabisch und Kurdisch, unter ärztlicher Aufsicht.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://wa.me/""" + WHATSAPP_NUMBER + """?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
+                <a href="https://wa.me/{{ whatsapp_num }}?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
                 <a href="#akademie" class="btn-outline-gold">ZUR AKADEMIE</a>
             </div>
         </div>
     </section>
 
-    <!-- قسم Über uns -->
     <section id="ueber-uns" class="container my-5 py-3">
         <div class="text-center mb-4">
             <span class="badge-gold">ÜBER UNS</span>
@@ -316,7 +309,6 @@ HTML_LAYOUT = """
         </div>
     </section>
 
-    <!-- قسم الأكاديمية (Akademie) -->
     <section id="akademie" class="container my-5 pt-4">
         <div class="text-center mb-4">
             <span class="badge-gold">DIE AKADEMIE</span>
@@ -340,7 +332,7 @@ HTML_LAYOUT = """
                     <p class="mb-0" style="color: #ffffff;"><strong>ABSCHLUSS:</strong> Mehrere anerkannte Zertifikate</p>
                 </div>
                 <div class="col-md-5 text-center">
-                    <a href="https://wa.me/""" + WHATSAPP_NUMBER + """?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
+                    <a href="https://wa.me/{{ whatsapp_num }}?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
                 </div>
             </div>
         </div>
@@ -384,7 +376,6 @@ HTML_LAYOUT = """
         </div>
     </section>
 
-    <!-- قسم Behandlungen & Galerie -->
     <section id="behandlungen" class="container my-5 pt-4">
         <div id="galerie" class="text-center mb-5">
             <span class="badge-gold">BEHANDLUNGEN & GALERIE</span>
@@ -422,7 +413,6 @@ HTML_LAYOUT = """
         </div>
     </section>
 
-    <!-- قسم Kontakt -->
     <section id="kontakt" class="container my-5 pt-4">
         <div class="contact-box">
             <span class="badge-gold d-block mb-2">KONTAKT</span>
@@ -445,7 +435,7 @@ HTML_LAYOUT = """
                         <i class="fas fa-phone-alt fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">TELEFON / WHATSAPP</span>
-                            <a href="tel:""" + PHONE_NUMBER + """" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
+                            <a href="tel:{{ phone_num }}" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
                         </div>
                     </div>
                 </div>
@@ -457,4 +447,12 @@ HTML_LAYOUT = """
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">ÖFFNUNGSZEITEN</span>
                             <strong>Mo – Sa · 10:00 – 15:00 Uhr</strong>
                         </div>
-             
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                        <i class="fab fa-instagram fs-4 text-warning mt-1"></i>
+                        <div>
+                            <span class="badge-gold d-block" style="font-size: 0.75rem;">INSTAGRAM</span>
+                            <strong>{{ instagram }}</strong>
+                        </div>
+        
