@@ -9,7 +9,7 @@ PHONE_NUMBER = "+491739125695"
 WHATSAPP_NUMBER = "491739125695"
 INSTAGRAM_HANDLE = "@hevo_kosmatic_akademie_"
 
-HTML_LAYOUT = f"""
+HTML_LAYOUT = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -20,30 +20,30 @@ HTML_LAYOUT = f"""
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {{
+        :root {
             --bg-dark: #0a0a0a;
             --card-bg: #141414;
             --accent-gold: #c5a059;
             --text-white: #ffffff;
             --text-gold-light: #e6ca94;
-        }}
-        html {{
+        }
+        html {
             scroll-behavior: smooth;
-        }}
-        body {{
+        }
+        body {
             background-color: var(--bg-dark);
             color: var(--text-white);
             font-family: 'Montserrat', sans-serif;
-        }}
-        h1, h2, h3, h4, .serif-font {{
+        }
+        h1, h2, h3, h4, .serif-font {
             font-family: 'Cormorant Garamond', serif;
             color: var(--text-white);
-        }}
-        .navbar {{
+        }
+        .navbar {
             background-color: rgba(10, 10, 10, 0.98);
             border-bottom: 1px solid #222;
-        }}
-        .logo-circle {{
+        }
+        .logo-circle {
             width: 45px;
             height: 45px;
             border: 1px solid var(--accent-gold);
@@ -54,14 +54,13 @@ HTML_LAYOUT = f"""
             color: var(--accent-gold);
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
-        }}
-        /* قائمة الموبايل والروابط */
-        .offcanvas {{
+        }
+        .offcanvas {
             background-color: #0d0d0d !important;
             color: #ffffff;
             border-left: 1px solid #222;
-        }}
-        .nav-link-custom {{
+        }
+        .nav-link-custom {
             color: #ffffff;
             font-size: 1.25rem;
             padding: 12px 0;
@@ -69,24 +68,24 @@ HTML_LAYOUT = f"""
             display: block;
             border-bottom: 1px solid #1a1a1a;
             transition: 0.3s;
-        }}
-        .nav-link-custom:hover {{
+        }
+        .nav-link-custom:hover {
             color: var(--accent-gold);
             padding-left: 10px;
-        }}
-        .hero {{
+        }
+        .hero {
             padding: 80px 20px 60px;
             text-align: center;
             background: linear-gradient(180deg, #111 0%, var(--bg-dark) 100%);
-        }}
-        .badge-gold {{
+        }
+        .badge-gold {
             color: var(--accent-gold);
             letter-spacing: 2px;
             font-size: 0.85rem;
             text-transform: uppercase;
             font-weight: 600;
-        }}
-        .btn-gold {{
+        }
+        .btn-gold {
             background-color: var(--accent-gold);
             color: #000;
             font-weight: 600;
@@ -98,13 +97,13 @@ HTML_LAYOUT = f"""
             transition: 0.3s;
             text-decoration: none;
             display: inline-block;
-        }}
-        .btn-gold:hover {{
+        }
+        .btn-gold:hover {
             background-color: #d4af66;
             color: #000;
             transform: translateY(-2px);
-        }}
-        .btn-outline-gold {{
+        }
+        .btn-outline-gold {
             border: 1px solid var(--accent-gold);
             color: var(--text-white);
             font-weight: 500;
@@ -115,30 +114,30 @@ HTML_LAYOUT = f"""
             text-decoration: none;
             display: inline-block;
             transition: 0.3s;
-        }}
-        .btn-outline-gold:hover {{
+        }
+        .btn-outline-gold:hover {
             background-color: var(--accent-gold);
             color: #000;
-        }}
-        .price-box {{
+        }
+        .price-box {
             background-color: var(--card-bg);
             border: 1px solid var(--accent-gold);
             border-radius: 20px;
             padding: 30px;
             margin-bottom: 40px;
-        }}
-        .old-price {{
+        }
+        .old-price {
             text-decoration: line-through;
             color: #888888;
             font-size: 1.5rem;
             margin-right: 15px;
-        }}
-        .new-price {{
+        }
+        .new-price {
             color: var(--accent-gold);
             font-size: 2.8rem;
             font-weight: 700;
-        }}
-        .info-pill {{
+        }
+        .info-pill {
             background: rgba(197, 160, 89, 0.15);
             border: 1px solid rgba(197, 160, 89, 0.4);
             color: var(--text-gold-light);
@@ -146,44 +145,44 @@ HTML_LAYOUT = f"""
             border-radius: 20px;
             font-size: 0.9rem;
             display: inline-block;
-        }}
-        .service-card {{
+        }
+        .service-card {
             background-color: var(--card-bg);
             border: 1px solid #2a2a2a;
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 30px;
             height: 100%;
-        }}
-        .service-card img {{
+        }
+        .service-card img {
             width: 100%;
             height: 240px;
             object-fit: cover;
-        }}
-        .service-card-body {{
+        }
+        .service-card-body {
             padding: 25px;
-        }}
-        .service-list {{
+        }
+        .service-list {
             list-style: none;
             padding-left: 0;
             color: var(--text-white);
             font-size: 1rem;
-        }}
-        .service-list li {{
+        }
+        .service-list li {
             margin-bottom: 12px;
             position: relative;
             padding-left: 20px;
             color: #ffffff;
-        }}
-        .service-list li::before {{
+        }
+        .service-list li::before {
             content: "•";
             color: var(--accent-gold);
             position: absolute;
             left: 0;
             font-size: 1.4rem;
             top: -3px;
-        }}
-        .tag-badge {{
+        }
+        .tag-badge {
             background: #222;
             color: var(--text-white);
             border: 1px solid #444;
@@ -192,17 +191,17 @@ HTML_LAYOUT = f"""
             font-size: 0.9rem;
             display: inline-block;
             margin: 4px;
-        }}
-        .contact-box {{
+        }
+        .contact-box {
             background-color: var(--card-bg);
             border: 1px solid #333;
             border-radius: 20px;
             padding: 35px;
-        }}
-        .contact-box p, .contact-box span, .contact-box a {{
+        }
+        .contact-box p, .contact-box span, .contact-box a {
             color: #ffffff !important;
-        }}
-        .float-whatsapp {{
+        }
+        .float-whatsapp {
             position: fixed;
             width: 60px;
             height: 60px;
@@ -219,7 +218,7 @@ HTML_LAYOUT = f"""
             align-items: center;
             justify-content: center;
             text-decoration: none;
-        }}
+        }
     </style>
 </head>
 <body>
@@ -227,7 +226,6 @@ HTML_LAYOUT = f"""
     <!-- القائمة العلوية مع زر القائمة على اليمين -->
     <nav class="navbar navbar-dark sticky-top py-3">
         <div class="container d-flex justify-content-between align-items-center">
-            <!-- الشعار على اليسار -->
             <a class="navbar-brand d-flex align-items-center gap-3" href="#">
                 <div class="logo-circle">H</div>
                 <div>
@@ -236,14 +234,13 @@ HTML_LAYOUT = f"""
                 </div>
             </a>
 
-            <!-- زر فتح القائمة على اليمين -->
             <button class="navbar-toggler border-0 fs-2 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <i class="fas fa-bars" style="color: var(--text-white);"></i>
             </button>
         </div>
     </nav>
 
-    <!-- قائمة الهواتف المنسدلة (Offcanvas) -->
+    <!-- قائمة الهواتف المنسدلة -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header border-bottom border-secondary py-3">
             <div class="d-flex align-items-center gap-2">
@@ -261,7 +258,7 @@ HTML_LAYOUT = f"""
                 <a href="#kontakt" class="nav-link-custom" data-bs-dismiss="offcanvas">Kontakt</a>
             </div>
             <div class="mt-4">
-                <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
+                <a href="https://wa.me/""" + WHATSAPP_NUMBER + """?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
             </div>
         </div>
     </div>
@@ -275,7 +272,7 @@ HTML_LAYOUT = f"""
                 Die erste DAkkS-zertifizierte Kosmetik-Akademie in Köln — Ausbildung und Behandlungen auf Deutsch, Arabisch und Kurdisch, unter ärztlicher Aufsicht.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
+                <a href="https://wa.me/""" + WHATSAPP_NUMBER + """?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
                 <a href="#akademie" class="btn-outline-gold">ZUR AKADEMIE</a>
             </div>
         </div>
@@ -343,7 +340,7 @@ HTML_LAYOUT = f"""
                     <p class="mb-0" style="color: #ffffff;"><strong>ABSCHLUSS:</strong> Mehrere anerkannte Zertifikate</p>
                 </div>
                 <div class="col-md-5 text-center">
-                    <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
+                    <a href="https://wa.me/""" + WHATSAPP_NUMBER + """?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
                 </div>
             </div>
         </div>
@@ -448,7 +445,7 @@ HTML_LAYOUT = f"""
                         <i class="fas fa-phone-alt fs-4 text-warning mt-1"></i>
                         <div>
                             <span class="badge-gold d-block" style="font-size: 0.75rem;">TELEFON / WHATSAPP</span>
-                            <a href="tel:{PHONE_NUMBER}" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
+                            <a href="tel:""" + PHONE_NUMBER + """" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
                         </div>
                     </div>
                 </div>
@@ -457,4 +454,7 @@ HTML_LAYOUT = f"""
                     <div class="d-flex align-items-start gap-3 mb-3">
                         <i class="fas fa-clock fs-4 text-warning mt-1"></i>
                         <div>
-                            <span class="badge-gold d-block" style="font-
+                            <span class="badge-gold d-block" style="font-size: 0.75rem;">ÖFFNUNGSZEITEN</span>
+                            <strong>Mo – Sa · 10:00 – 15:00 Uhr</strong>
+                        </div>
+             
