@@ -1,10 +1,13 @@
-from flask import Flask, render_template_string
+                            <from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-# بيانات التواصل
-PHONE_NUMBER = "+491729887745"
-WHATSAPP_NUMBER = "491729887745"
+# ==========================================
+# بيانات الاتصال المحدثة
+# ==========================================
+PHONE_NUMBER = "+491739125695"
+WHATSAPP_NUMBER = "491739125695"
+INSTAGRAM_HANDLE = "@hevo_kosmatic_akademie_"
 
 HTML_LAYOUT = f"""
 <!DOCTYPE html>
@@ -21,19 +24,23 @@ HTML_LAYOUT = f"""
             --bg-dark: #0a0a0a;
             --card-bg: #141414;
             --accent-gold: #c5a059;
-            --text-light: #f5f5f5;
-            --text-muted: #a0a0a0;
+            --text-white: #ffffff;
+            --text-gold-light: #e6ca94;
+        }}
+        html {{
+            scroll-behavior: smooth;
         }}
         body {{
             background-color: var(--bg-dark);
-            color: var(--text-light);
+            color: var(--text-white);
             font-family: 'Montserrat', sans-serif;
         }}
         h1, h2, h3, h4, .serif-font {{
             font-family: 'Cormorant Garamond', serif;
+            color: var(--text-white);
         }}
         .navbar {{
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(10, 10, 10, 0.98);
             border-bottom: 1px solid #222;
         }}
         .logo-circle {{
@@ -48,16 +55,36 @@ HTML_LAYOUT = f"""
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
         }}
+        /* قائمة الموبايل والروابط */
+        .offcanvas {{
+            background-color: #0d0d0d !important;
+            color: #ffffff;
+            border-left: 1px solid #222;
+        }}
+        .nav-link-custom {{
+            color: #ffffff;
+            font-size: 1.25rem;
+            padding: 12px 0;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #1a1a1a;
+            transition: 0.3s;
+        }}
+        .nav-link-custom:hover {{
+            color: var(--accent-gold);
+            padding-left: 10px;
+        }}
         .hero {{
-            padding: 70px 20px 50px;
+            padding: 80px 20px 60px;
             text-align: center;
             background: linear-gradient(180deg, #111 0%, var(--bg-dark) 100%);
         }}
         .badge-gold {{
             color: var(--accent-gold);
             letter-spacing: 2px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
+            font-weight: 600;
         }}
         .btn-gold {{
             background-color: var(--accent-gold);
@@ -79,7 +106,7 @@ HTML_LAYOUT = f"""
         }}
         .btn-outline-gold {{
             border: 1px solid var(--accent-gold);
-            color: var(--text-light);
+            color: var(--text-white);
             font-weight: 500;
             border-radius: 30px;
             padding: 14px 32px;
@@ -102,7 +129,7 @@ HTML_LAYOUT = f"""
         }}
         .old-price {{
             text-decoration: line-through;
-            color: var(--text-muted);
+            color: #888888;
             font-size: 1.5rem;
             margin-right: 15px;
         }}
@@ -112,17 +139,17 @@ HTML_LAYOUT = f"""
             font-weight: 700;
         }}
         .info-pill {{
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            color: var(--accent-gold);
-            padding: 6px 16px;
+            background: rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--text-gold-light);
+            padding: 8px 18px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: inline-block;
         }}
         .service-card {{
             background-color: var(--card-bg);
-            border: 1px solid #222;
+            border: 1px solid #2a2a2a;
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 30px;
@@ -139,30 +166,41 @@ HTML_LAYOUT = f"""
         .service-list {{
             list-style: none;
             padding-left: 0;
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            color: var(--text-white);
+            font-size: 1rem;
         }}
         .service-list li {{
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             position: relative;
-            padding-left: 18px;
+            padding-left: 20px;
+            color: #ffffff;
         }}
         .service-list li::before {{
             content: "•";
             color: var(--accent-gold);
             position: absolute;
             left: 0;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            top: -3px;
         }}
         .tag-badge {{
             background: #222;
-            color: var(--text-light);
-            border: 1px solid #333;
-            padding: 8px 14px;
+            color: var(--text-white);
+            border: 1px solid #444;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: inline-block;
             margin: 4px;
+        }}
+        .contact-box {{
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 35px;
+        }}
+        .contact-box p, .contact-box span, .contact-box a {{
+            color: #ffffff !important;
         }}
         .float-whatsapp {{
             position: fixed;
@@ -175,7 +213,7 @@ HTML_LAYOUT = f"""
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -186,42 +224,108 @@ HTML_LAYOUT = f"""
 </head>
 <body>
 
-    <!-- الهيدر واللوجو -->
+    <!-- القائمة العلوية مع زر القائمة على اليمين -->
     <nav class="navbar navbar-dark sticky-top py-3">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- الشعار على اليسار -->
             <a class="navbar-brand d-flex align-items-center gap-3" href="#">
                 <div class="logo-circle">H</div>
                 <div>
                     <div class="fw-bold fs-4" style="letter-spacing: 3px;">HEVO</div>
-                    <div class="small text-muted" style="font-size: 0.65rem; letter-spacing: 2px;">KOSMETIK AKADEMIE</div>
+                    <div class="small" style="font-size: 0.65rem; letter-spacing: 2px; color: var(--accent-gold);">KOSMETIK AKADEMIE</div>
                 </div>
             </a>
+
+            <!-- زر فتح القائمة على اليمين -->
+            <button class="navbar-toggler border-0 fs-2 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <i class="fas fa-bars" style="color: var(--text-white);"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- الهيرو الرئيسي -->
+    <!-- قائمة الهواتف المنسدلة (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom border-secondary py-3">
+            <div class="d-flex align-items-center gap-2">
+                <div class="logo-circle" style="width: 35px; height: 35px; font-size: 1.1rem;">H</div>
+                <span class="fw-bold fs-5" style="letter-spacing: 2px; color: #fff;">HEVO</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between py-4">
+            <div class="nav flex-column">
+                <a href="#behandlungen" class="nav-link-custom" data-bs-dismiss="offcanvas">Behandlungen</a>
+                <a href="#akademie" class="nav-link-custom" data-bs-dismiss="offcanvas">Akademie</a>
+                <a href="#ueber-uns" class="nav-link-custom" data-bs-dismiss="offcanvas">Über uns</a>
+                <a href="#galerie" class="nav-link-custom" data-bs-dismiss="offcanvas">Galerie</a>
+                <a href="#kontakt" class="nav-link-custom" data-bs-dismiss="offcanvas">Kontakt</a>
+            </div>
+            <div class="mt-4">
+                <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20eine%20kostenlose%20Beratung%20vereinbaren" class="btn-gold w-100 text-center py-3">BERATUNG BUCHEN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الواجهة الرئيسية -->
     <section class="hero">
         <div class="container">
             <span class="badge-gold d-block mb-2">DAKKS-ZERTIFIZIERTE BEAUTY-AKADEMIE KÖLN</span>
             <h1 class="display-4 my-3">Werde eine starke, <br><i class="serif-font" style="color: var(--accent-gold);">unabhängige Frau.</i></h1>
-            <p class="text-muted mx-auto mb-4" style="max-width: 650px;">
+            <p class="mx-auto mb-4" style="max-width: 650px; color: #ffffff; font-size: 1.05rem;">
                 Die erste DAkkS-zertifizierte Kosmetik-Akademie in Köln — Ausbildung und Behandlungen auf Deutsch, Arabisch und Kurdisch, unter ärztlicher Aufsicht.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
                 <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="btn-gold">BEHANDLUNG BUCHEN</a>
-                <a href="#akademie-preis" class="btn-outline-gold">ZUR AKADEMIE</a>
+                <a href="#akademie" class="btn-outline-gold">ZUR AKADEMIE</a>
             </div>
         </div>
     </section>
 
-    <!-- قسم الأكاديمية والأسعار الجديدة (من الصور الأخيرة) -->
-    <section id="akademie-preis" class="container my-5">
+    <!-- قسم Über uns -->
+    <section id="ueber-uns" class="container my-5 py-3">
+        <div class="text-center mb-4">
+            <span class="badge-gold">ÜBER UNS</span>
+            <h2 class="display-4 serif-font mt-2">Warum HEVO Kosmetik?</h2>
+        </div>
+        <div class="row g-4 text-center text-md-start">
+            <div class="col-md-3 col-6">
+                <div class="p-3 border border-secondary rounded-3 h-100">
+                    <i class="fas fa-certificate text-warning fs-2 mb-2"></i>
+                    <h5 class="serif-font">DAkkS Zertifiziert</h5>
+                    <p class="small text-muted mb-0">Höchste Ausbildungsstandards in Deutschland.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="p-3 border border-secondary rounded-3 h-100">
+                    <i class="fas fa-user-md text-warning fs-2 mb-2"></i>
+                    <h5 class="serif-font">Ärztliche Aufsicht</h5>
+                    <p class="small text-muted mb-0">Fachärztliche Begleitung bei allen Behandlungen.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="p-3 border border-secondary rounded-3 h-100">
+                    <i class="fas fa-language text-warning fs-2 mb-2"></i>
+                    <h5 class="serif-font">3 Sprachen</h5>
+                    <p class="small text-muted mb-0">Unterricht auf Deutsch, Arabisch & Kurdisch.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="p-3 border border-secondary rounded-3 h-100">
+                    <i class="fas fa-award text-warning fs-2 mb-2"></i>
+                    <h5 class="serif-font">FachDozentin</h5>
+                    <p class="small text-muted mb-0">Offiziell anerkannte Expertise und Zertifikate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأكاديمية (Akademie) -->
+    <section id="akademie" class="container my-5 pt-4">
         <div class="text-center mb-4">
             <span class="badge-gold">DIE AKADEMIE</span>
             <h2 class="display-4 serif-font mt-2">Fachkosmetik-Ausbildung</h2>
         </div>
 
-        <!-- بطاقة السعر والتفاصيل -->
         <div class="price-box">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-7 mb-4 mb-md-0">
@@ -229,14 +333,14 @@ HTML_LAYOUT = f"""
                         <span class="old-price">10.000 €</span>
                         <span class="new-price serif-font">7.000 €</span>
                     </div>
-                    <p class="text-warning mb-3"><i class="fas fa-clock me-1"></i> Begrenztes Angebot · Ratenzahlung 500 – 1.000 €/Monat möglich</p>
+                    <p class="text-warning mb-3" style="font-size: 1rem;"><i class="fas fa-clock me-1"></i> Begrenztes Angebot · Ratenzahlung 500 – 1.000 €/Monat möglich</p>
                     <div class="d-flex flex-wrap gap-2 mb-3">
                         <span class="info-pill"><i class="fas fa-calendar-alt me-1"></i> START: AUGUST 2026</span>
                         <span class="info-pill"><i class="fas fa-clock me-1"></i> DAUER: 6 Monate (Theorie + Praxis) · Intensiv: 2 Monate</span>
                         <span class="info-pill"><i class="fas fa-language me-1"></i> SPRACHEN: Deutsch · Arabisch · Kurdisch</span>
-                        <span class="info-pill"><i class="fas fa-user-clock me-1"></i> TERMINE: 2× pro Woche (werktags oder Wochenende)</span>
+                        <span class="info-pill"><i class="fas fa-user-clock me-1"></i> TERMINE: 2× pro Woche</span>
                     </div>
-                    <p class="text-muted mb-0"><strong>ABSCHLUSS:</strong> Mehrere anerkannte Zertifikate</p>
+                    <p class="mb-0" style="color: #ffffff;"><strong>ABSCHLUSS:</strong> Mehrere anerkannte Zertifikate</p>
                 </div>
                 <div class="col-md-5 text-center">
                     <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20mich%20für%20die%20Fachkosmetik-Ausbildung%20anmelden" class="btn-gold btn-lg w-100 py-3">JETZT ANMELDEN</a>
@@ -244,9 +348,7 @@ HTML_LAYOUT = f"""
             </div>
         </div>
 
-        <!-- محاور النظرية والعملي (Theorie & Praxis) -->
         <div class="row g-4">
-            <!-- النظرية (Theorie) -->
             <div class="col-md-6">
                 <div class="service-card p-4">
                     <h3 class="serif-font fs-2 mb-3" style="color: var(--accent-gold);"><i class="fas fa-book me-2"></i>Theorie</h3>
@@ -260,7 +362,6 @@ HTML_LAYOUT = f"""
                 </div>
             </div>
 
-            <!-- العملي (Praxis) -->
             <div class="col-md-6">
                 <div class="service-card p-4">
                     <h3 class="serif-font fs-2 mb-3" style="color: var(--accent-gold);"><i class="fas fa-hands me-2"></i>Praxis</h3>
@@ -275,10 +376,9 @@ HTML_LAYOUT = f"""
             </div>
         </div>
 
-        <!-- البونص والشهادات الإضافية -->
         <div class="service-card p-4 mt-4">
             <span class="badge-gold">GESCHENK-ZERTIFIKATE</span>
-            <p class="text-muted mt-2 mb-3">Diese zusätzlichen Techniken sind als zertifizierte Bonus-Module inklusive:</p>
+            <p class="mt-2 mb-3" style="color: #ffffff;">Diese zusätzlichen Techniken sind als zertifizierte Bonus-Module inklusive:</p>
             <div>
                 <span class="tag-badge"><i class="fas fa-check text-warning me-1"></i> Wimpernlifting</span>
                 <span class="tag-badge"><i class="fas fa-check text-warning me-1"></i> Augenbrauenlaminierung</span>
@@ -287,17 +387,18 @@ HTML_LAYOUT = f"""
         </div>
     </section>
 
-    <!-- باقي الخدمات والفروع -->
-    <section class="container my-5 py-4">
-        <div class="text-center mb-5">
-            <h2 class="display-4 serif-font">Sichtbare Ergebnisse, <br><i style="color: var(--accent-gold);">spürbare Pflege</i></h2>
+    <!-- قسم Behandlungen & Galerie -->
+    <section id="behandlungen" class="container my-5 pt-4">
+        <div id="galerie" class="text-center mb-5">
+            <span class="badge-gold">BEHANDLUNGEN & GALERIE</span>
+            <h2 class="display-4 serif-font mt-2">Sichtbare Ergebnisse, <br><i style="color: var(--accent-gold);">spürbare Pflege</i></h2>
         </div>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Gesicht">
                     <div class="service-card-body">
-                        <h3 class="serif-font fs-2">Gesicht & Haut</h3>
+                        <h3 class="serif-font fs-2" style="color: var(--accent-gold);">Gesicht & Haut</h3>
                         <ul class="service-list mt-3">
                             <li>Tiefenreinigung & Hydrafacial</li>
                             <li>Dermapen / Microneedling & BB Glow</li>
@@ -311,7 +412,7 @@ HTML_LAYOUT = f"""
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1512290900673-7002012d22b2?auto=format&fit=crop&w=800&q=80" alt="Laser">
                     <div class="service-card-body">
-                        <h3 class="serif-font fs-2">Laser & Anti-Aging</h3>
+                        <h3 class="serif-font fs-2" style="color: var(--accent-gold);">Laser & Anti-Aging</h3>
                         <ul class="service-list mt-3">
                             <li>CO2-Laser (Hauterneuerung)</li>
                             <li>Plasma Pen (Lifting ohne OP)</li>
@@ -324,30 +425,36 @@ HTML_LAYOUT = f"""
         </div>
     </section>
 
-    <!-- الفوتر والتواصل -->
-    <footer class="text-center py-5" style="border-top: 1px solid #222;">
-        <div class="container">
-            <h3 class="serif-font fs-2 mb-3">HEVO KOSMETIK AKADEMIE</h3>
-            <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-warning me-2"></i>Berliner Str. 368, 51061 Köln</p>
-            <p class="text-muted mb-4"><i class="fas fa-phone-alt text-warning me-2"></i>{PHONE_NUMBER}</p>
-            <a href="https://wa.me/{WHATSAPP_NUMBER}" class="btn-gold mb-4">TERMIN ANFRAGEN</a>
-            <p class="small text-muted mb-0">&copy; HEVO Kosmetik Akademie Köln. Alle Rechte vorbehalten.</p>
-        </div>
-    </footer>
+    <!-- قسم Kontakt -->
+    <section id="kontakt" class="container my-5 pt-4">
+        <div class="contact-box">
+            <span class="badge-gold d-block mb-2">KONTAKT</span>
+            <h2 class="serif-font fs-1 mb-4" style="color: var(--accent-gold);">Besuche uns in Köln</h2>
+            <p class="mb-4" style="font-size: 1.05rem;">
+                Vereinbare eine kostenlose Beratung — für eine Behandlung oder für die Ausbildung. Wir beraten dich gern auf Deutsch, Arabisch oder Kurdisch.
+            </p>
 
-    <!-- زر الواتساب العائم -->
-    <a href="https://wa.me/{WHATSAPP_NUMBER}?text=Hallo,%20ich%20möchte%20einen%20Termin%20vereinbaren" class="float-whatsapp" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                        <i class="fas fa-map-marker-alt fs-4 text-warning mt-1"></i>
+                        <div>
+                            <span class="badge-gold d-block" style="font-size: 0.75rem;">ADRESSE</span>
+                            <strong>Berliner Straße 368, 51061 Köln</strong>
+                        </div>
+                    </div>
 
-</body>
-</html>
-"""
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                        <i class="fas fa-phone-alt fs-4 text-warning mt-1"></i>
+                        <div>
+                            <span class="badge-gold d-block" style="font-size: 0.75rem;">TELEFON / WHATSAPP</span>
+                            <a href="tel:{PHONE_NUMBER}" class="text-decoration-none fw-bold" style="font-size: 1.1rem;">0173 9125695</a>
+                        </div>
+                    </div>
+                </div>
 
-@app.route('/')
-def home():
-    return render_template_string(HTML_LAYOUT)
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-    
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                        <i class="fas fa-clock fs-4 text-warning mt-1"></i>
+                        <div>
+                            <span class="badge-gold d-block" style="font-
